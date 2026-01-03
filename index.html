@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PINU AI</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+    #chatbox {
+      width: 90%;
+      max-width: 500px;
+      margin: auto;
+      background: #020617;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      border-radius: 10px;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 10px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🤖 PINU AI</h1>
+<p>Your Student Helper AI</p>
+
+<div id="chatbox"></div>
+<br>
+
+<input id="userInput" placeholder="Ask PINU AI..." />
+<button onclick="talk()">Send</button>
+
+<script>
+function talk() {
+  let input = document.getElementById("userInput").value;
+  let chat = document.getElementById("chatbox");
+
+  chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+  let reply = "I am PINU AI. I help students learn and grow.";
+
+  if (input.toLowerCase().includes("hello"))
+    reply = "Hello! I am PINU AI 😊";
+
+  if (input.toLowerCase().includes("study"))
+    reply = "I can help you study smartly. What subject?";
+
+  if (input.toLowerCase().includes("who are you"))
+    reply = "I am PINU AI, created to help students succeed.";
+
+  chat.innerHTML += "<p><b>PINU AI:</b> " + reply + "</p>";
+  document.getElementById("userInput").value = "";
+}
+</script>
+
+</body>
+</html>
